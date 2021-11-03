@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Este es el primer desafío de React en CoderHouse
+          Primer desafío de React en CoderHouse
         </p>
         <a
           className="App-link"
