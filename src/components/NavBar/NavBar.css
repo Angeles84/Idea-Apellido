@@ -1,0 +1,24 @@
+nav {
+  background-color: #E8E5E0;
+}
+nav a {
+  color: #262626;
+  transition: all .4s ease;
+}
+nav a:hover{
+  color: #17a2b8;
+}
+.angie {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.contacto {
+  color: white;
+}
+nav i {
+  transition: all .4s ease;
+}
+nav i:hover {
+  color: #17a2b8;
+}
