@@ -1,12 +1,13 @@
 import React from 'react'
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer.jsx';
+import NavBar from './components/NavBar/NavBar.jsx';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <h1 className="header">Aquí irían los items</h1>
+      <ItemListContainer greeting="¡Descubre la magia de mis Mandalas!"/>
     </div>
   );
 }

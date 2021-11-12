@@ -1,5 +1,6 @@
 nav {
   background-color: #E8E5E0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.20);
 }
 nav a {
   color: #262626;

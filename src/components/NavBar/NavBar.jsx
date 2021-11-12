@@ -1,4 +1,5 @@
 import React from 'react'
+import CartWidget from '../CartWidget/CartWidget.jsx';
 import './NavBar.css';
 
 const NavBar = () => {
@@ -10,11 +11,11 @@ const NavBar = () => {
       </button>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav ml-auto">
-          <a className="nav-link" href="#">Inicio</a>
           <a className="nav-link ml-2" href="#">Productos</a>
           <a className="nav-link ml-2" href="#">Sobre mí</a>
           <a className="nav-link ml-2" href="#">Contacto</a>
           <a className="nav-link btn btn-info rounded-pill ml-3 px-3 contacto" href="#">Login</a>
+          <CartWidget />
         </div>
       </div>
     </nav>
