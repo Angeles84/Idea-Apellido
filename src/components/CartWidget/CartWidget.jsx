@@ -1,9 +1,11 @@
 import React from 'react'
 import './CartWidget.css'
 
+import { MdShoppingCart } from "react-icons/md";
+
 const CartWidget = () => {
   return (
-    <a className="nav-link ml-5" href="#"><i className="fas fa-shopping-cart"></i></a>
+    <a className="nav-link ml-5" href="#"><MdShoppingCart size='25px'/></a>
   )
 }
 

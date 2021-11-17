@@ -1,0 +1,11 @@
+.sub , .add {
+  border-color: #17a2b8;
+  border-radius: 20px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  transition: all .3s ease;
+}
+
+.sub:hover , .add:hover {
+  background-color: #E8E5E0;
+}
