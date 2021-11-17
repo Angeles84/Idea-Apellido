@@ -2,16 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './ItemCount.css'
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({stock, initial }) => {
   
   const [counter , setCounter] = React.useState(initial)
 
-  const onAdd = () => {
+  const sumarUno = () => {
     setCounter(counter + 1)
   }
   
-  const onSub = () => {
+  const restarUno = () => {
     setCounter(counter - 1)
+  }
+  
+  const onAdd = () => {
+    console.log('Agregar al carrito')
   }
 
   return (
@@ -20,7 +24,7 @@ const ItemCount = ({stock, initial}) => {
         <h6 className="card-title mb-4">Nombre del producto</h6>
         <button
           className="mr-3 sub"
-          onClick={onSub}
+          onClick={restarUno}
           disabled={counter === 1}
         >
           -
@@ -28,13 +32,14 @@ const ItemCount = ({stock, initial}) => {
         <span>{counter}</span>
         <button
           className="ml-3 add"
-          onClick={onAdd}
+          onClick={sumarUno}
           disabled={counter === stock}
         >
           +
         </button>
         <button 
           className="btn btn-info btn-block rounded-pill mt-3"
+          onClick={onAdd}
         >
           Agregar
         </button>
