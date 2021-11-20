@@ -7,11 +7,15 @@ const ItemCount = ({stock, initial }) => {
   const [counter , setCounter] = React.useState(initial)
 
   const sumarUno = () => {
-    setCounter(counter + 1)
+    if(counter < stock) {
+      setCounter(counter + 1)
+    }
   }
   
   const restarUno = () => {
-    setCounter(counter - 1)
+    if(counter > initial) {
+      setCounter(counter - 1)
+    }
   }
   
   const onAdd = () => {
@@ -25,7 +29,7 @@ const ItemCount = ({stock, initial }) => {
         <button
           className="mr-3 sub"
           onClick={restarUno}
-          disabled={counter === 1}
+          disabled={counter === initial}
         >
           -
         </button>
