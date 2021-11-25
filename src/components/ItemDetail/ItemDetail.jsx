@@ -12,11 +12,12 @@ const ItemDetail = ({cardDetalle}) => {
           </div>
           <div className="col-md-7">
             <div className="card-body">
-              <h3 className="card-title mb-5">{cardDetalle.title}</h3>
+              <h3 className="card-title mb-5">Mandala: {cardDetalle.title}</h3>
               <p className="card-text"><b>Descripción:</b> {cardDetalle.description}</p>
               <p className="card-text"><b>Tamaño:</b> {cardDetalle.size}</p>
               <p className="card-text"><b>Precio:</b> ${cardDetalle.price}</p>
               <p className="card-text"><small className="text-muted">Stock: {cardDetalle.stock}</small></p>
+              <button className="btn btn-info rounded-pill mt-4 px-5">Agregar al carrito</button> 
             </div>
           </div>
         </div>
