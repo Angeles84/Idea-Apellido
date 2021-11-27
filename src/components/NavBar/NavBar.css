@@ -23,3 +23,10 @@ nav i {
 nav i:hover {
   color: #17a2b8;
 }
+
+.active {
+  color: grey;
+}
+.active:hover {
+  color: grey;
+}

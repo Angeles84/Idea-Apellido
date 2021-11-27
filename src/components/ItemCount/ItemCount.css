@@ -9,3 +9,7 @@
 .sub:hover , .add:hover {
   background-color: #E8E5E0;
 }
+
+.card-contador {
+  border: none;
+}

@@ -1,36 +1,32 @@
 import React , {useEffect} from 'react'
+import {useParams} from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import florChakras from '../../assets/img/flor-chakras.jpg'
+import objetoMandalas from '../../store/productoMandalas.js'
 
 const ItemDetailContainer = () => {
 
   const [detalle, setDetalle] = React.useState({})
-
-  const objetoDetalle = { 
-    title: 'Abeja de la Luz', 
-    imagen: florChakras, 
-    size: '20 x 20 cm', 
-    price: 12000, 
-    stock: 3 , 
-    description: 'Mandala en acrílico sobre madera de 3 milímetros de grosor.'
-  }
+  const {mandId} = useParams()
   
-  const promesa = new Promise((resolve, reject) => {
-    setTimeout(() => resolve(objetoDetalle), 2000);
-  });
+  const promesa = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(objetoMandalas)
+      }, 2000)
+    })
+  }
 
   useEffect(() => {
-    promesa.then(resp =>
-      setDetalle(resp))
-      console.log(detalle)
-  }, [])
+    promesa()
+    .then(data => setDetalle(data.find(item => item.id === mandId)))
+    .catch( error => console.log(error))
+  }, [mandId])
 
   return (
     <div>
-      <ItemDetail cardDetalle={detalle} />
+      <ItemDetail detalle={detalle} />
     </div>
   )
 }
-
 
 export default ItemDetailContainer

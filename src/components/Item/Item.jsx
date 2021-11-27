@@ -1,26 +1,30 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { useHistory } from 'react-router-dom'
 import './Item.css'
 
-const Item = ({ id, title, price, imagen, stock, size, description }) => {
+const Item = ({ mandala }) => {
+
+  const history = useHistory()
+
   return (
     <div className="col-12 col-md-6 col-lg-4">
       <div className="card mb-4 text-left">
         <div className="card-body">
-          <img className="img-fluid" src={imagen} alt="" />
-          <h5 className="card-title mt-3"><b>{title}</b></h5>
-          <p className="card-text mb-2"><b>Precio:</b> ${price.toLocaleString()}</p>
-          <p className="card-text mb-2"><b>Stock:</b> {stock}</p>
-          <p className="card-text mb-2"><b>Descripción:</b> {description} </p>
-          <button className="btn btn-info btn-block rounded-pill mt-3">Ver detalle del producto</button> 
+          <img className="img-fluid" src={mandala.imagen} alt="" />
+          <h5 className="card-title mt-3"><span>Mandala:</span> {mandala.title}</h5>
+          <p className="card-text mb-2"><b>Precio:</b> ${mandala.price.toLocaleString()}</p>
+          {/* <p className="card-text mb-2"><b>Stock:</b> {stock}</p>
+          <p className="card-text mb-2"><b>Descripción:</b> {description} </p> */}
+          <button 
+            className="btn btn-info btn-block rounded-pill mt-3" 
+            onClick={() => history.push(`/item/${mandala.id}`)}
+          >
+            Ver detalle del producto
+          </button> 
         </div>
       </div>
     </div>
   )
-}
-
-Item.propTypes = {
-
 }
 
 export default Item

@@ -18,14 +18,13 @@ const ItemCount = ({stock, initial }) => {
     }
   }
   
-  const onAdd = () => {
-    console.log('Agregar al carrito')
-  }
+  // const onAdd = () => {
+  //   console.log('Agregar al carrito')
+  // }
 
   return (
-    <div className="card" >
-      <div className="card-body">
-        <h6 className="card-title mb-4">Nombre del producto</h6>
+    <div className="card card-contador" >
+      <div className="card-body pl-0">
         <button
           className="mr-3 sub"
           onClick={restarUno}
@@ -41,12 +40,12 @@ const ItemCount = ({stock, initial }) => {
         >
           +
         </button>
-        <button 
+        {/* <button 
           className="btn btn-info btn-block rounded-pill mt-3"
           onClick={onAdd}
         >
           Agregar
-        </button>
+        </button> */}
       </div>   
     </div>
   )
