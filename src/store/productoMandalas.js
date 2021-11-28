@@ -21,7 +21,7 @@ const objetoMandalas = [
   { id: '4', title: 'Calipso en flor', imagen: calipso, size: '20 x 20 cm', price: 12000, stock: 1 , description: 'Acrílico sobre madera de 3 milímetros', category: 'pequeña'},
   { id: '5',title: 'Chakras', imagen: chakras, size: '20 x 20 cm', price: 15000, stock: 2 , description: 'Acrílico sobre tela con marco de 2 pulgadas', category: 'pequeña'},
   { id: '6', title: 'Chakras en una flor', imagen: florChakras, size: '20 x 20 cm', price: 13000, stock: 4 , description: 'Acrílico sobre madera de 3 milímetros', category: 'pequeña'},
-  { id: '7',title: 'Gran Flor', imagen: florEntera, size: '30 x 30 cm', price: 18000, stock: 2 , description: 'Acrílico sobre madera dividido en 4 partes de 20 x 20', category: 'grande'},
+  { id: '7',title: 'Gran Flor', imagen: florEntera, size: '40 x 40 cm', price: 18000, stock: 2 , description: 'Acrílico sobre madera dividido en 4 partes de 20 x 20', category: 'grande'},
   { id: '8', title: 'Flor de la vida', imagen: flor, size: '20 x 20 cm', price: 10000, stock: 5 , description: 'Acrílico sobre madera de 3 milímetros', category: 'pequeña'},
   { id: '9', title: 'Merkaba', imagen: merkaba, size: '20 x 20 cm', price: 12000, stock: 3 , description: 'Acrílico sobre  de 3 milímetros', category: 'pequeña'},
   { id: '10', title: 'Un pedacito de flor en negro', imagen: negra, size: '20 x 20 cm', price: 10000, stock: 2 , description: 'Acrílico sobre madera de 3 milímetros', category: 'pequeña'},

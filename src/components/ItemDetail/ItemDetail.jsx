@@ -17,7 +17,7 @@ const ItemDetail = ({detalle}) => {
               <p className="card-text"><b>Tamaño:</b> {detalle.size}</p>
               <p className="card-text"><b>Precio:</b> ${detalle.price}</p>
               <p className="card-text"><small className="text-muted">Stock: {detalle.stock}</small></p>
-              <ItemCount stock={5} initial={1}/>
+              <ItemCount stock={detalle.stock} initial={1}/>
               <button className="btn btn-info rounded-pill mt-4 px-5">Agregar al carrito</button> 
             </div>
           </div>
