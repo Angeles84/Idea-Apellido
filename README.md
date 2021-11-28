@@ -1,4 +1,18 @@
-# Getting Started with Create React App
+# ¡Hola! Bienvenido a mi sitio web  =)
+
+Este es mi proyecto final de mi curso de React.js
+
+Es un e-commerce donde expongo mis mandalas. Podrás verlas por categorías, en detalle y por supuesto enviarlas al carrito.
+Este sitio solo es de práctica, realmente no podrás comprar mis mandalas por aquí, pero si podrás comprarlas a travez de mi Instagram.
+[@retratos_restauracion_mao](https://www.instagram.com/retratos_restauracion_mao/?hl=es)
+
+## Vista previa del sitio
+
+<br>
+(https://github.com/Angeles84/Idea-Apellido/tree/main/src/assets/img/portada.jpg)
+<br>
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
