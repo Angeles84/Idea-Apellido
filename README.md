@@ -1,8 +1,11 @@
 # ¡Hola! Bienvenido a mi sitio web  =)
 
-Este es mi proyecto final de mi curso de React.js
+Este es mi proyecto final de mi curso de React.js.
+Tecnologías utilizadas: HTML, CSS, JavaScript, Bootstrap, React.js, Router y React Icons.
 
-Es un e-commerce donde expongo mis mandalas. Podrás verlas por categorías, en detalle y por supuesto enviarlas al carrito.
+Es un e-commerce donde expongo mis mandalas, las cuales pinté con acrílico sobre tela y madera. Podrás verlas por categorías, ver cada una en detalle y por supuesto enviarlas al carrito. 
+
+La idea es crear un flujo sensillo y agradable a la vista, en un sitio atractivo y colorido.
 
 Este sitio solo es de práctica, realmente no podrás comprar mis mandalas por aquí, pero si podrás comprarlas a travez de mi Instagram
 [@retratos_restauracion_mao](https://www.instagram.com/retratos_restauracion_mao/?hl=es)
@@ -10,7 +13,7 @@ Este sitio solo es de práctica, realmente no podrás comprar mis mandalas por a
 ## Vista previa del sitio
 
 <br>
-<img src="https://raw.githubusercontent.com/Angeles84/Idea-Apellido/main/src/assets/img/portada.jpg" height="400" />
+<img src="https://raw.githubusercontent.com/Angeles84/Idea-Apellido/main/src/assets/img/portada.jpg" height="390" />
 <br>
 
 ## Getting Started with Create React App
