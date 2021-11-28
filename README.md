@@ -9,7 +9,7 @@ Este sitio solo es de práctica, realmente no podrás comprar mis mandalas por a
 ## Vista previa del sitio
 
 <br>
-(https://github.com/Angeles84/Idea-Apellido/tree/main/src/assets/img/portada.jpg)
+<img src="https://github.com/Angeles84/Idea-Apellido/tree/main/src/assets/img/portada.jpg" width="750" />
 <br>
 
 ## Getting Started with Create React App
