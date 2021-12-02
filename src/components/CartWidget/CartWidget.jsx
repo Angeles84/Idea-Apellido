@@ -5,7 +5,7 @@ import { MdShoppingCart } from "react-icons/md";
 
 const CartWidget = () => {
   return (
-    <a className="nav-link ml-5" href="#"><MdShoppingCart size='25px'/></a>
+    <MdShoppingCart size='25px'/>
   )
 }
 

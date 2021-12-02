@@ -12,11 +12,11 @@ const NavBar = ({id}) => {
       </button>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav ml-auto">
-          <NavLink className="nav-link ml-2" to="/" activeClassName="active">Productos</NavLink>
+          <NavLink className="nav-link ml-2" to="/inicio" activeClassName="active">Productos</NavLink>
           <NavLink className="nav-link ml-2" to="/category/grande" activeClassName="active">Mandalas-Grandes</NavLink>
           <NavLink className="nav-link ml-2" to="/category/pequeña" activeClassName="active">Mandalas-Pequeñas</NavLink>
-          <a className="nav-link btn btn-info rounded-pill ml-3 px-3 contacto" href="#">Login</a>
-          <CartWidget />
+          <a className="nav-link btn btn-info rounded-pill ml-4 px-3 contacto" href="#">Login</a>
+          <NavLink className="nav-link ml-5" to="/cart" activeClassName="active"><CartWidget /></NavLink>   
         </div>
       </div>
     </nav>

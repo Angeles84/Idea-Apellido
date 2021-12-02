@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './ItemCount.css'
 
-const ItemCount = ({stock, initial }) => {
+const ItemCount = ({stock, initial , onAdd}) => {
   
   const [counter , setCounter] = React.useState(initial)
 
@@ -17,10 +17,6 @@ const ItemCount = ({stock, initial }) => {
       setCounter(counter - 1)
     }
   }
-  
-  // const onAdd = () => {
-  //   console.log('Agregar al carrito')
-  // }
 
   return (
     <div className="card card-contador" >
@@ -40,13 +36,15 @@ const ItemCount = ({stock, initial }) => {
         >
           +
         </button>
-        {/* <button 
-          className="btn btn-info btn-block rounded-pill mt-3"
-          onClick={onAdd}
-        >
-          Agregar
-        </button> */}
-      </div>   
+      </div> 
+      <div>
+      <button 
+        className="btn btn-info rounded-pill mt-4 px-5"
+        onClick={() => onAdd(counter)}
+      >
+        Agregar al carrito
+      </button> 
+      </div>  
     </div>
   )
 }
@@ -54,6 +52,7 @@ const ItemCount = ({stock, initial }) => {
 ItemCount.propTypes = {
   stock: PropTypes.number,
   initial: PropTypes.number,
+  cantidad: PropTypes.number
 }
 
 export default ItemCount

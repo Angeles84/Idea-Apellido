@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div>
-      <ItemDetail detalle={detalle} />
+      { detalle !== undefined && <ItemDetail detalle={detalle} />}
     </div>
   )
 }
