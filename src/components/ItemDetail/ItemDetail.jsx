@@ -20,7 +20,7 @@ const ItemDetail = ({detalle}) => {
 
   const handleComprar = () => {
     addItem(detalle)
-    //history.push(`/cart`)
+    history.push(`/cart`)
   }
 
   return (
