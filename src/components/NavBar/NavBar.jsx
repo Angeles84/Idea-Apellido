@@ -1,9 +1,13 @@
-import React from 'react'
+import React , {useContext}from 'react'
 import CartWidget from '../CartWidget/CartWidget.jsx';
 import {Link, NavLink} from 'react-router-dom'
 import './NavBar.css';
+import { CartContext } from '../../Context/CartContext'
 
 const NavBar = ({id}) => {
+
+  const {cart} = useContext(CartContext)
+
   return (
     <nav className="navbar navbar-expand-lg fixed-top px-3 px-sm-4 px-md-5">
       <Link className="navbar-brand angie" to="/">Angie's Store</Link>
@@ -16,7 +20,9 @@ const NavBar = ({id}) => {
           <NavLink className="nav-link ml-2" to="/category/grande" activeClassName="active">Mandalas-Grandes</NavLink>
           <NavLink className="nav-link ml-2" to="/category/pequeña" activeClassName="active">Mandalas-Pequeñas</NavLink>
           <a className="nav-link btn btn-info rounded-pill ml-4 px-3 contacto" href="#">Login</a>
-          <NavLink className="nav-link ml-5" to="/cart" activeClassName="active"><CartWidget /></NavLink>   
+          <NavLink className="nav-link ml-5" to="/cart" activeClassName="active">
+            <CartWidget /><span>{cart}</span>
+          </NavLink>   
         </div>
       </div>
     </nav>

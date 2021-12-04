@@ -1,15 +1,26 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.css'
 import { useHistory } from 'react-router-dom'
+import { CartContext } from '../../Context/CartContext'
 
 const ItemDetail = ({detalle}) => {
 
   const [cantidad, setCantidad] =  React.useState(0)
+  const [comprar, setComprar] = React.useState(false)
+
   const history = useHistory()
 
-  const onAdd = (counter) => {
-    setCantidad(counter)
+  const {addItem} = useContext(CartContext)
+
+  const onAdd = (qty) => {
+    setCantidad(qty)
+    setComprar(true)
+  }
+
+  const handleComprar = () => {
+    addItem(detalle)
+    //history.push(`/cart`)
   }
 
   return (
@@ -27,12 +38,12 @@ const ItemDetail = ({detalle}) => {
               <p className="card-text"><b>Precio:</b> ${detalle.price}</p>
               <p className="card-text"><small className="text-muted">Stock: {detalle.stock}</small></p>
               {
-                cantidad >= 1 ? <button 
+                comprar ? <button 
                   className="btn btn-info rounded-pill mt-5 px-5"         
-                  onClick={() => history.push(`/cart`)}
+                  onClick={handleComprar}
                 >
                   Terminar compra
-                </button> : <ItemCount onAdd={onAdd} cantidad={cantidad} stock={detalle.stock} initial={1}/>
+                </button> : <ItemCount onAdd={(qty) => onAdd(qty)} cantidad={cantidad} stock={detalle.stock} initial={1}/>
               }
               
             </div>
