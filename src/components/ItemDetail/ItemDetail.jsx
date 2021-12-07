@@ -11,7 +11,8 @@ const ItemDetail = ({detalle}) => {
 
   const history = useHistory()
 
-  const {addItem} = useContext(CartContext)
+  const {addItem , isInCart} = useContext(CartContext)
+
 
   const onAdd = (qty) => {
     setCantidad(qty)
@@ -20,7 +21,7 @@ const ItemDetail = ({detalle}) => {
 
   const handleComprar = () => {
     addItem(detalle)
-    history.push(`/cart`)
+    //history.push(`/cart`)
   }
 
   return (

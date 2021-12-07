@@ -5,9 +5,17 @@ export const CartContext = createContext()
 const CartContextProvider = ({children}) => {
 
   const [cart, setCart ] = React.useState([])
-  
-  const addItem = (item) => {
-    setCart([...cart, item])
+
+  const isInCart = (currentId) => {
+    return cart.some(product => product.id === currentId)
+  }
+
+  const addItem = (item = { id: 1}) => {
+    if(isInCart(item.id)){
+      alert('El producto ya se encuentra en el carrito')
+    } else {
+      setCart([...cart, item])
+    }
   }
 
   return (
