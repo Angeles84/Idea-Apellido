@@ -11,8 +11,7 @@ const ItemDetail = ({detalle}) => {
 
   const history = useHistory()
 
-  const {addItem , isInCart} = useContext(CartContext)
-
+  const {addItem, agregarCantidad } = useContext(CartContext)
 
   const onAdd = (qty) => {
     setCantidad(qty)
@@ -20,7 +19,8 @@ const ItemDetail = ({detalle}) => {
   }
 
   const handleComprar = () => {
-    addItem(detalle)
+    addItem(detalle, cantidad)
+    agregarCantidad(cantidad)
     //history.push(`/cart`)
   }
 
@@ -43,7 +43,7 @@ const ItemDetail = ({detalle}) => {
                   className="btn btn-info rounded-pill mt-5 px-5"         
                   onClick={handleComprar}
                 >
-                  Terminar compra
+                  Confirmar agregar al carrito
                 </button> : <ItemCount onAdd={(qty) => onAdd(qty)} cantidad={cantidad} stock={detalle.stock} initial={1}/>
               }
               
