@@ -3,28 +3,27 @@ import {useParams} from 'react-router'
 import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css'
 import objetoMandalas from '../../store/productoMandalas.js'
+import { collection, getDocs, query, where } from 'firebase/firestore/lite'
+import { db } from '../../firebase/config'
+
 
 const ItemListContainer = ({greeting}) => {
 
   const [mandalas, setMandalas] = React.useState([])
   const { categoryId } = useParams()
 
-  const promesa = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(objetoMandalas)
-      }, 2000)
-    })
-  }
-
   useEffect(() => {
-    promesa(categoryId)
-    .then(respMandala => {           
-      if(!categoryId) {
-        setMandalas(respMandala)
-      }else {
-        setMandalas(respMandala.filter(mandala => mandala.category === categoryId))
-      }
+
+    const productosRef = collection(db, "mandalas")
+    const q = categoryId ? query(productosRef, where('category', '==', categoryId)) : productosRef
+    getDocs(q)
+    .then((snapshot) => {
+      const items = snapshot.docs.map((doc) => ({
+              id: doc.id, 
+              ...doc.data()
+          })
+      )
+      setMandalas(items)
     })
     .catch( error => console.log(error))
 

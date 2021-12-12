@@ -2,23 +2,24 @@ import React , {useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import objetoMandalas from '../../store/productoMandalas.js'
+import { db } from '../../firebase/config'
+import { doc, getDoc } from 'firebase/firestore/lite'
 
 const ItemDetailContainer = () => {
 
   const [detalle, setDetalle] = React.useState({})
   const {mandId} = useParams()
-  
-  const promesa = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(objetoMandalas)
-      }, 2000)
-    })
-  }
 
   useEffect(() => {
-    promesa()
-    .then(data => setDetalle(data.find(item => item.id === mandId)))
+    
+    const docRef = doc(db, "mandalas", mandId)
+    getDoc(docRef)
+    .then((doc) => {
+      setDetalle( {
+        id: doc.id,
+        ...doc.data()
+      })
+    })
     .catch( error => console.log(error))
   }, [mandId])
 
