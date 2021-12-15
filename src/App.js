@@ -8,6 +8,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import CartView from './components/CartView/CartView';
 import CartContextProvider from './Context/CartContext';
 import Checkout from './components/Checkout/Checkout';
+import Login from './components/Login/Login';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route exact path="/item/:mandId">
               <ItemDetailContainer />
+            </Route>
+            <Route exact path="/login">
+              <Login />
             </Route>
             <Route exact path="/cart">
               <CartView />

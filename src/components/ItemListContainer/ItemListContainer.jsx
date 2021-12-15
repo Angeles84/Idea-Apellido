@@ -5,15 +5,17 @@ import './ItemListContainer.css'
 //import objetoMandalas from '../../store/productoMandalas.js'
 import { collection, getDocs, query, where } from 'firebase/firestore/lite'
 import { db } from '../../firebase/config'
+import Loading from '../Loading/Loading'
 
 
 const ItemListContainer = ({greeting}) => {
 
   const [mandalas, setMandalas] = React.useState([])
+  const [loading, setLoading] = React.useState(false);
   const { categoryId } = useParams()
 
   useEffect(() => {
-
+    setLoading(true)
     const productosRef = collection(db, "mandalas")
     const q = categoryId ? query(productosRef, where('category', '==', categoryId)) : productosRef
     getDocs(q)
@@ -25,6 +27,9 @@ const ItemListContainer = ({greeting}) => {
       )
       setMandalas(items)
     })
+    .finally(() => {
+      setLoading(false)
+    })
     .catch( error => console.log(error))
 
   }, [categoryId])
@@ -33,7 +38,10 @@ const ItemListContainer = ({greeting}) => {
     <div className="container">
       <h2 className="greeting">{greeting}</h2>
       <div className="mt-5">
-        <ItemList listmandalas={mandalas} />
+        {
+          loading ? <Loading /> : <ItemList listmandalas={mandalas} />
+        }
+          
       </div>
     </div>
   )

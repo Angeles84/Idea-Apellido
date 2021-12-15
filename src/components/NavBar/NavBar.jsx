@@ -20,7 +20,7 @@ const NavBar = ({id}) => {
           <NavLink className="nav-link ml-2" to="/inicio" activeClassName="active">Productos</NavLink>
           <NavLink className="nav-link ml-2" to="/category/grande" activeClassName="active">Mandalas-Grandes</NavLink>
           <NavLink className="nav-link ml-2" to="/category/pequeña" activeClassName="active">Mandalas-Pequeñas</NavLink>
-          <a className="nav-link btn btn-info rounded-pill ml-4 px-3 contacto" href="#">Login</a>
+          <NavLink className="nav-link btn btn-info rounded-pill ml-4 px-3 contacto" to="/login" href="#">Login</NavLink>
           <NavLink className="nav-link ml-5" to="/cart" activeClassName="active">
             <CartWidget /><span>{cart.length === 0 ? '' : cart.length}</span>
           </NavLink>   

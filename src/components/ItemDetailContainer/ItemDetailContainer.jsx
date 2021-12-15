@@ -4,14 +4,16 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 //import objetoMandalas from '../../store/productoMandalas.js'
 import { db } from '../../firebase/config'
 import { doc, getDoc } from 'firebase/firestore/lite'
+import Loading from '../Loading/Loading'
 
 const ItemDetailContainer = () => {
 
   const [detalle, setDetalle] = React.useState({})
+  const [loading, setLoading] = React.useState(false);
   const {mandId} = useParams()
 
   useEffect(() => {
-    
+    setLoading(true)
     const docRef = doc(db, "mandalas", mandId)
     getDoc(docRef)
     .then((doc) => {
@@ -20,12 +22,17 @@ const ItemDetailContainer = () => {
         ...doc.data()
       })
     })
+    .finally(() => {
+      setLoading(false)
+    })
     .catch( error => console.log(error))
   }, [mandId])
 
   return (
-    <div>
-      { detalle !== undefined && <ItemDetail detalle={detalle} />}
+    <div className='pt-3'>
+      {
+        loading ? <Loading /> : <ItemDetail detalle={detalle} />
+      } 
     </div>
   )
 }
