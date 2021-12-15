@@ -2,7 +2,7 @@ import React , {useEffect} from 'react'
 import {useParams} from 'react-router'
 import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css'
-import objetoMandalas from '../../store/productoMandalas.js'
+//import objetoMandalas from '../../store/productoMandalas.js'
 import { collection, getDocs, query, where } from 'firebase/firestore/lite'
 import { db } from '../../firebase/config'
 

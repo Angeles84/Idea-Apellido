@@ -2,8 +2,7 @@ import React, { useContext }  from 'react'
 import './CartView.css'
 import { CartContext } from '../../Context/CartContext'
 import CartItem from '../CartItem/CartItem'
-import { NavLink } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import { NavLink , Link} from 'react-router-dom'
 
 const CartView = () => {
 
@@ -13,7 +12,7 @@ const CartView = () => {
     return <div className="container pt-5">
               <h2 className="mt-5 pt-5">No agregaste mandalas al carrito aún</h2>
               <hr/>
-              <NavLink to="/" className="btn btn-info px-4">Volver</NavLink>
+              <NavLink to="/" className="btn btn-info rounded-pill px-4">Volver</NavLink>
           </div>
   }
 
@@ -34,15 +33,11 @@ const CartView = () => {
     </div>
       <hr/>
     <div className="container mt-4">
-        <button className="btn btn-danger" onClick={vaciarCarrito}>Vaciar carrito</button>
-        <button className="btn btn-info mx-2" onClick={purchase}>Terminar mi compra</button>
+        <button className="btn btn-danger rounded-pill" onClick={vaciarCarrito}>Vaciar carrito</button>
+        <Link to="/checkout" className="btn btn-info rounded-pill mx-2" onClick={purchase}>Terminar mi compra</Link>
     </div>
     </div>
   )
-}
-
-CartView.propTypes = {
-
 }
 
 export default CartView

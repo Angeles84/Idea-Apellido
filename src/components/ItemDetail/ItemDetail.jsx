@@ -1,15 +1,12 @@
 import React, {useContext} from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.css'
-import { useHistory } from 'react-router-dom'
 import { CartContext } from '../../Context/CartContext'
 
 const ItemDetail = ({detalle}) => {
 
   const [cantidad, setCantidad] =  React.useState(0)
   const [comprar, setComprar] = React.useState(false)
-
-  const history = useHistory()
 
   const {addItem, agregarCantidad } = useContext(CartContext)
 
@@ -21,7 +18,6 @@ const ItemDetail = ({detalle}) => {
   const handleComprar = () => {
     addItem(detalle, cantidad)
     agregarCantidad(cantidad)
-    //history.push(`/cart`)
   }
 
   return (

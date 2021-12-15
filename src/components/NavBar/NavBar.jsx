@@ -6,7 +6,8 @@ import { CartContext } from '../../Context/CartContext'
 
 const NavBar = ({id}) => {
 
-  const {cart} = useContext(CartContext)
+  const {cart } = useContext(CartContext)
+  
 
   return (
     <nav className="navbar navbar-expand-lg fixed-top px-3 px-sm-4 px-md-5">

@@ -1,7 +1,7 @@
 import React , {useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import objetoMandalas from '../../store/productoMandalas.js'
+//import objetoMandalas from '../../store/productoMandalas.js'
 import { db } from '../../firebase/config'
 import { doc, getDoc } from 'firebase/firestore/lite'
 

@@ -26,7 +26,7 @@ const CartItem = ({ title, price, imagen, cantidad, id }) => {
                     </div>
                     <div className="col-md-6 col-lg-4 pt-md-5 pr-md-0">
                       <button
-                        className="btn btn-sm btn-danger mt-3 mt-md-0"
+                        className="btn btn-sm rounded-pill btn-danger mt-3 mt-md-0"
                         onClick={() => { removerDelCarrito(id) }}
                       >
                           ELIMINAR
