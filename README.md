@@ -1,5 +1,7 @@
 # ¡Hola! Bienvenido a mi sitio web  =)
 
+Visualizar en https://angie-store-react.netlify.app/
+
 Este es mi proyecto final de mi curso de React.js.
 Tecnologías utilizadas: HTML, CSS, JavaScript, Bootstrap, React.js, Router y React Icons.
 
