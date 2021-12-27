@@ -29,7 +29,7 @@ const CartItem = ({ title, price, imagen, cantidad, id }) => {
                         className="btn btn-sm rounded-pill btn-danger mt-3 mt-md-0"
                         onClick={() => { removerDelCarrito(id) }}
                       >
-                          ELIMINAR
+                          Eliminar
                       </button>
                     </div>
                   </div>          

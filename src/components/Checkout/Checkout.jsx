@@ -65,7 +65,7 @@ const Checkout = () => {
             <p>Tu número de orden es: <b>{orderId}</b></p>
             <Link to="/" className="btn btn-info rounded-pill px-5 mt-4">Volver</Link>
           </> 
-        : <>
+        : <> 
             <h1 className='mt-5 pt-3'>Checkout</h1>
             <hr />
             <form onSubmit={handleSubmit}>

@@ -7,42 +7,45 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer.
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import CartView from './components/CartView/CartView';
 import CartContextProvider from './Context/CartContext';
+import { UserContextProvider } from './Context/UserContext';
 import Checkout from './components/Checkout/Checkout';
 import Login from './components/Login/Login';
 
 function App() {
   return (
-    <CartContextProvider>
-      <Router>
-        <div className="App">
-          <NavBar />
+    <UserContextProvider>
+      <CartContextProvider>
+        <Router>
+          <div className="App">
+            <NavBar />
 
-          <Switch>
-            <Route exact path="/">
-              <ItemListContainer greeting="¡Descubre la magia de mis Mandalas!"/>
-            </Route>
-            <Route exact path="/inicio">
-              <ItemListContainer greeting="¡Descubre la magia de mis Mandalas!"/>
-            </Route>
-            <Route exact path="/category/:categoryId">
-              <ItemListContainer greeting="¡Descubre la magia de mis Mandalas!"/>
-            </Route>
-            <Route exact path="/item/:mandId">
-              <ItemDetailContainer />
-            </Route>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/cart">
-              <CartView />
-            </Route>
-            <Route exact path="/checkout">
-              <Checkout />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-    </CartContextProvider>
+            <Switch>
+              <Route exact path="/">
+                <ItemListContainer greeting="¡Descubre la magia de mis Mandalas!"/>
+              </Route>
+              <Route exact path="/inicio">
+                <ItemListContainer greeting="¡Descubre la magia de mis Mandalas!"/>
+              </Route>
+              <Route exact path="/category/:categoryId">
+                <ItemListContainer greeting="¡Descubre la magia de mis Mandalas!"/>
+              </Route>
+              <Route exact path="/item/:mandId">
+                <ItemDetailContainer />
+              </Route>
+              <Route exact path="/login">
+                <Login />
+              </Route>
+              <Route exact path="/cart">
+                <CartView />
+              </Route>
+              <Route exact path="/checkout">
+                <Checkout />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </CartContextProvider>
+    </UserContextProvider>
   );
 }
 
